@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Tutorial on Generative AI</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .slide {
+            width: 900px;
+            height: 600px;
+            margin: 0 auto 50px auto;
+            padding: 40px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+        }
+        .slide-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        h1 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 28px;
+            color: #3498db;
+            margin-top: 0;
+        }
+        h3 {
+            font-size: 24px;
+            color: #2980b9;
+        }
+        ul, ol {
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+        .two-column {
+            display: flex;
+            justify-content: space-between;
+        }
+        .column {
+            width: 48%;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-top: 20px;
+        }
+        .architecture-img {
+            display: block;
+            max-width: 80%;
+            margin: 20px auto;
+            max-height: 300px;
+        }
+        @media print {
+            .slide {
+                page-break-after: always;
+                box-shadow: none;
+                margin: 0;
+                height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Title Slide -->
+    <div class="slide">
+        <div class="slide-content header">
+            <h1>Comprehensive Tutorial on Generative AI</h1>
+            <h2>Key Modeling Approaches</h2>
+            <div style="margin-top: 60px;">
+                <p>A comprehensive overview of modern generative AI techniques</p>
+                <p>June 2025</p>
+            </div>
+        </div>
+        <div class="slide-number">1</div>
+    </div>
+
+    <!-- Overview Slide -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Overview</h2>
+            <p>This presentation covers five key Generative AI approaches:</p>
+            <ol>
+                <li>Generative Adversarial Networks (GANs)</li>
+                <li>Variational Autoencoders (VAEs)</li>
+                <li>Transformers</li>
+                <li>Diffusion Models</li>
+                <li>Autoregressive Models</li>
+            </ol>
+            <p>Each approach has unique strengths, weaknesses, and applications in the field of generative AI.</p>
+        </div>
+        <div class="slide-number">2</div>
+    </div>
+
+    <!-- GANs Slide -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Generative Adversarial Networks (GANs)</h2>
+            
+            <div class="two-column">
+                <div class="column">
+                    <h3>Concept</h3>
+                    <ul>
+                        <li>Two-player minimax game (Generator vs Discriminator)</li>
+                        <li>Generator creates fake data from noise</li>
+                        <li>Discriminator distinguishes real from fake</li>
+                    </ul>
+                    
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Excellent at generating high-resolution, sharp images</li>
+                        <li>Challenging to train (mode collapse, instability)</li>
+                        <li>No explicit density modeling</li>
+                    </ul>
+                </div>
+                
+                <div class="column">
+                    <h3>Variants</h3>
+                    <ul>
+                        <li>DCGAN: Deep Convolutional GANs</li>
+                        <li>WGAN: Wasserstein GANs</li>
+                        <li>StyleGAN: Style-based Generator Architecture</li>
+                    </ul>
+                    
+                    <h3>Key Paper</h3>
+                    <p>Goodfellow et al., 2014, "Generative Adversarial Nets"</p>
+                    
+                    <img src="../images/gan_architecture.png" alt="GAN Architecture" class="architecture-img">
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">3</div>
+    </div>
+
+    <!-- VAEs Slide -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Variational Autoencoders (VAEs)</h2>
+            
+            <div class="two-column">
+                <div class="column">
+                    <h3>Concept</h3>
+                    <ul>
+                        <li>Encoder maps inputs to latent distribution</li>
+                        <li>Decoder reconstructs data from latent samples</li>
+                        <li>Balances reconstruction and regularization</li>
+                    </ul>
+                    
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Well-structured latent space</li>
+                        <li>Stable training process</li>
+                        <li>Often produces blurrier outputs than GANs</li>
+                    </ul>
+                </div>
+                
+                <div class="column">
+                    <h3>Variants</h3>
+                    <ul>
+                        <li>β-VAE: Controls disentanglement</li>
+                        <li>VQ-VAE: Vector Quantized VAE</li>
+                        <li>Conditional VAE: Conditional generation</li>
+                    </ul>
+                    
+                    <h3>Key Paper</h3>
+                    <p>Kingma & Welling, 2013, "Auto-Encoding Variational Bayes"</p>
+                    
+                    <img src="../images/vae_architecture.png" alt="VAE Architecture" class="architecture-img">
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">4</div>
+    </div>
+
+    <!-- Transformers Slide -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Transformers (for Text Generation)</h2>
+            
+            <div class="two-column">
+                <div class="column">
+                    <h3>Concept</h3>
+                    <ul>
+                        <li>Based on self-attention mechanisms</li>
+                        <li>Processes entire sequences in parallel</li>
+                        <li>Autoregressive decoding for generation</li>
+                    </ul>
+                    
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Excellent at long-range dependencies</li>
+                        <li>Scales effectively with more data and parameters</li>
+                        <li>Powers modern LLMs (GPT, LLaMA, etc.)</li>
+                    </ul>
+                </div>
+                
+                <div class="column">
+                    <h3>Attention Mechanism</h3>
+                    <ul>
+                        <li>Query, Key, Value calculations</li>
+                        <li>Multi-head attention for different representation spaces</li>
+                        <li>Positional encoding to maintain sequence order</li>
+                    </ul>
+                    
+                    <h3>Key Paper</h3>
+                    <p>Vaswani et al., 2017, "Attention is All You Need"</p>
+                    
+                    <img src="../images/transformer_architecture.png" alt="Transformer Architecture" class="architecture-img">
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">5</div>
+    </div>
+
+    <!-- Diffusion Models Slide -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Diffusion Models</h2>
+            
+            <div class="two-column">
+                <div class="column">
+                    <h3>Concept</h3>
+                    <ul>
+                        <li>Forward process: gradually add noise to data</li>
+                        <li>Reverse process: learn to denoise step by step</li>
+                        <li>Based on non-equilibrium thermodynamics</li>
+                    </ul>
+                    
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>High-quality, diverse outputs</li>
+                        <li>Stable training compared to GANs</li>
+                        <li>Slower generation due to iterative process</li>
+                    </ul>
+                </div>
+                
+                <div class="column">
+                    <h3>Variants</h3>
+                    <ul>
+                        <li>DDPM: Denoising Diffusion Probabilistic Models</li>
+                        <li>DDIM: Denoising Diffusion Implicit Models</li>
+                        <li>Latent Diffusion: Diffusion in compressed space</li>
+                    </ul>
+                    
+                    <h3>Key Paper</h3>
+                    <p>Ho et al., 2020, "Denoising Diffusion Probabilistic Models"</p>
+                    
+                    <img src="../images/diffusion_architecture.png" alt="Diffusion Model Architecture" class="architecture-img">
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">6</div>
+    </div>
+
+    <!-- Autoregressive Models Slide -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Autoregressive Models</h2>
+            
+            <div class="two-column">
+                <div class="column">
+                    <h3>Concept</h3>
+                    <ul>
+                        <li>Model sequential data one element at a time</li>
+                        <li>Each prediction depends on previous elements</li>
+                        <li>Explicit density modeling</li>
+                    </ul>
+                    
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>High-quality details</li>
+                        <li>Flexible for sequential data</li>
+                        <li>Slow generation due to sequential nature</li>
+                    </ul>
+                </div>
+                
+                <div class="column">
+                    <h3>Variants</h3>
+                    <ul>
+                        <li>PixelCNN: Masked convolutions for images</li>
+                        <li>PixelRNN: RNN-based autoregressive models</li>
+                        <li>WaveNet: Autoregressive for audio</li>
+                    </ul>
+                    
+                    <h3>Key Paper</h3>
+                    <p>van den Oord et al., 2016, "Pixel Recurrent Neural Networks"</p>
+                    
+                    <img src="../images/autoregressive_architecture.png" alt="Autoregressive Model Architecture" class="architecture-img">
+                </div>
+            </div>
+        </div>
+        <div class="slide-number">7</div>
+    </div>
+
+    <!-- Comparison Slide -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Comparison: Strengths and Weaknesses</h2>
+            
+            <table>
+                <tr>
+                    <th>Model</th>
+                    <th>Strengths</th>
+                    <th>Weaknesses</th>
+                </tr>
+                <tr>
+                    <td>GANs</td>
+                    <td>Sharp images, Fast inference</td>
+                    <td>Training instability, Mode collapse</td>
+                </tr>
+                <tr>
+                    <td>VAEs</td>
+                    <td>Stable training, Structured latent space</td>
+                    <td>Blurry outputs, Less realistic</td>
+                </tr>
+                <tr>
+                    <td>Transformers</td>
+                    <td>Excellent for text, Scales well</td>
+                    <td>High computational cost, Hallucinations</td>
+                </tr>
+                <tr>
+                    <td>Diffusion</td>
+                    <td>High-quality outputs, Stable training</td>
+                    <td>Slow inference, Complex implementation</td>
+                </tr>
+                <tr>
+                    <td>Autoregressive</td>
+                    <td>Explicit probability, High-quality details</td>
+                    <td>Slow generation, High memory usage</td>
+                </tr>
+            </table>
+        </div>
+        <div class="slide-number">8</div>
+    </div>
+
+    <!-- Applications Slide -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Applications</h2>
+            
+            <ul>
+                <li><strong>GANs</strong>: Photo editing, Art generation, Data augmentation</li>
+                <li><strong>VAEs</strong>: Anomaly detection, Drug discovery, Image manipulation</li>
+                <li><strong>Transformers</strong>: Text generation, Translation, Code completion</li>
+                <li><strong>Diffusion</strong>: Image generation, Text-to-image, Image editing</li>
+                <li><strong>Autoregressive</strong>: Image/audio synthesis, Text completion, Time series</li>
+            </ul>
+            
+            <p>Each model type has found specific niches where its strengths are most valuable. Recent advances often combine multiple approaches to leverage complementary benefits.</p>
+        </div>
+        <div class="slide-number">9</div>
+    </div>
+
+    <!-- Resources Slide -->
+    <div class="slide">
+        <div class="slide-content">
+            <h2>Resources</h2>
+            
+            <div class="two-column">
+                <div class="column">
+                    <h3>Code Examples</h3>
+                    <ul>
+                        <li>All models implemented in PyTorch</li>
+                        <li>MNIST examples for image models</li>
+                        <li>Simulated text for Transformer</li>
+                        <li>Available in the <code>/code/</code> directory</li>
+                    </ul>
+                </div>
+                
+                <div class="column">
+                    <h3>Further Reading</h3>
+                    <ul>
+                        <li>Original papers for each model</li>
+                        <li>Recent advancements and state-of-the-art</li>
+                        <li>Detailed documentation in <code>/docs/</code></li>
+                        <li>Architecture diagrams in <code>/images/</code></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p>Prerequisites: Python 3.8+, PyTorch 2.0+, and related libraries</p>
+            </div>
+        </div>
+        <div class="slide-number">10</div>
+    </div>
+
+    <!-- Thank You Slide -->
+    <div class="slide">
+        <div class="slide-content header">
+            <h1>Thank You!</h1>
+            <p>Explore the full tutorial at:</p>
+            <ul>
+                <li>Documentation: <code>/docs/</code></li>
+                <li>Code: <code>/code/</code></li>
+                <li>Images: <code>/images/</code></li>
+            </ul>
+            <p style="margin-top: 40px;">June 2025</p>
+        </div>
+        <div class="slide-number">11</div>
+    </div>
+
+</body>
+</html>

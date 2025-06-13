@@ -23,11 +23,11 @@ Generative AI creates new content (e.g., images, text) by learning patterns from
   ```
 
 ## Chapters
-1. [Generative Adversarial Networks (GANs)](docs/gans.md)
-2. [Variational Autoencoders (VAEs)](docs/vaes.md)
-3. [Transformers (Autoregressive for Text)](docs/transformers.md)
-4. [Diffusion Models](docs/diffusion.md)
-5. [Autoregressive Models (Image-Based)](docs/autoregressive.md)
+1. [Generative Adversarial Networks (GANs)](docs/gans.markdown)
+2. [Variational Autoencoders (VAEs)](docs/vaes.markdown)
+3. [Transformers (Autoregressive for Text)](docs/transformers.markdown)
+4. [Diffusion Models](docs/diffusion.markdown)
+5. [Autoregressive Models (Image-Based)](docs/autoregressive.markdown)
 
 ## Repository Structure
 - `docs/`: Markdown files for each chapter.
