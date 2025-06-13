@@ -28,7 +28,7 @@ As Goodfellow et al. (2014) explained in their groundbreaking paper, "The genera
 
 The mathematical formulation of this game is:
 
-$$\min_G \max_D V(D, G) = \mathbb{E}_{x \sim p_{data}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z)))]$$
+min_G max_D V(D, G) = 𝔼ₓ∼p_data(x)[log D(x)] + 𝔼_z∼p_z(z)[log(1 − D(G(z)))]
 
 where:
 - G is the generator that maps noise z to data space
